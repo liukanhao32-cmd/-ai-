@@ -1,0 +1,63 @@
+{
+  "_说明": "加一个 AI 就往 models 里加一条；改完刷新网页即可生效，不用重启。key 不用写在这里，在网页的设置里填。",
+  "models": [
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "color": "#4f7cff",
+      "baseUrl": "https://api.deepseek.com",
+      "model": "deepseek-flash",
+      "contextWindow": 1000000,
+      "inputPrice": 2,
+      "outputPrice": 8,
+      "extraBody": {
+        "thinking": { "type": "disabled" }
+      },
+      "note": "模型名用 deepseek-flash（旧的 deepseek-chat 已不是官方名称）。这里关掉了思考模式，回复更快；想让它深想，把 disabled 改成 enabled"
+    },
+    {
+      "id": "doubao",
+      "name": "豆包",
+      "color": "#22c55e",
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+      "model": "doubao-seed-2-1-pro-260915",
+      "contextWindow": 32768,
+      "inputPrice": 0.8,
+      "outputPrice": 2,
+      "note": "方舟现在可直接用 Model ID 调用，不必建接入点；报「模型不存在」就去方舟「模型列表」复制你能用的 ID，也可以改填自定义接入点 ep-xxxx。价格是估算，以方舟实际计费为准"
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "color": "#a855f7",
+      "baseUrl": "https://api.openai.com/v1",
+      "model": "gpt-4.1",
+      "contextWindow": 128000,
+      "inputPrice": 15,
+      "outputPrice": 60,
+      "note": "需要海外支付与网络；model 改成你账号可用的型号"
+    },
+    {
+      "id": "qwen",
+      "name": "千问",
+      "color": "#06b6d4",
+      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "qwen-plus",
+      "contextWindow": 131072,
+      "inputPrice": 0.8,
+      "outputPrice": 2,
+      "note": "阿里云百炼（DashScope）的 OpenAI 兼容接口。Key 在百炼控制台创建，且 Key 与地域绑定——北京地域的 Key 只能调北京端点。常用模型：qwen-plus / qwen-max / qwen-turbo"
+    },
+    {
+      "id": "hunyuan",
+      "name": "元宝",
+      "color": "#f97316",
+      "baseUrl": "https://api.hunyuan.cloud.tencent.com/v1",
+      "model": "hunyuan-turbo",
+      "contextWindow": 32768,
+      "inputPrice": 15,
+      "outputPrice": 50,
+      "note": "元宝是 C 端产品、本身没有开发者 API；这里接的是它背后的「混元」。Key 在腾讯云混元控制台创建。新账号若走 TokenHub，baseUrl 要换成 TokenHub 给出的地址；模型名以控制台为准（hunyuan-turbo / hunyuan-t1 / hunyuan-lite）"
+    }
+  ]
+}
